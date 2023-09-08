@@ -1,6 +1,5 @@
 import tkinter as tk
 
-
 class QuizApp:
     def __init__(self, root):
         self.root = root
@@ -32,8 +31,8 @@ class QuizApp:
         self.question_label.pack(padx=10, pady=10)
 
         self.option_buttons = []
-        for _ in range(4):
-            button = tk.Button(root, text="", command=lambda: self.check_answer(_))
+        for i in range(4):
+            button = tk.Button(root, text="", command=lambda i=i: self.check_answer(i))
             self.option_buttons.append(button)
             button.pack(padx=5, pady=5)
 
@@ -70,7 +69,7 @@ class QuizApp:
         self.current_question += 1
         self.load_question()
 
-
 root = tk.Tk()
 quiz_app = QuizApp(root)
 root.mainloop()
+
